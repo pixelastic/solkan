@@ -1,0 +1,27 @@
+# Important files that should not be committed
+.env
+.envrc
+
+# Build directories
+build/
+dist/
+tmp/
+
+# Junk files
+.DS_Store
+Thumbs.db
+lerna-debug.log
+npm-debug.log
+yarn-error.log
+*~
+**/__pycache__/
+**/__pycache__/*
+
+# Tool directories
+.claude/
+.cursor/
+.netlify/
+.taskmaster/
+.turbo/
+.yarn/
+node_modules/
