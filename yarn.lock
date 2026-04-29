@@ -2700,14 +2700,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commands@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "commands@workspace:."
-  dependencies:
-    aberlaas: "npm:2.27.4"
-  languageName: unknown
-  linkType: soft
-
 "comment-parser@npm:1.4.5":
   version: 1.4.5
   resolution: "comment-parser@npm:1.4.5"
@@ -7407,6 +7399,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"solkan@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "solkan@workspace:."
+  dependencies:
+    aberlaas: "npm:2.27.4"
+    firost: "npm:5.8.0"
+    golgoth: "npm:3.1.0"
+    minimist: "npm:1.2.8"
+    unbash: "npm:3.0.0"
+  languageName: unknown
+  linkType: soft
+
 "sort-object-keys@npm:^2.0.0, sort-object-keys@npm:^2.0.1":
   version: 2.1.0
   resolution: "sort-object-keys@npm:2.1.0"
@@ -8090,6 +8094,13 @@ __metadata:
   version: 1.6.3
   resolution: "ufo@npm:1.6.3"
   checksum: 10c0/bf0e4ebff99e54da1b9c7182ac2f40475988b41faa881d579bc97bc2a0509672107b0a0e94c4b8d31a0ab8c4bf07f4aa0b469ac6da8536d56bda5b085ea2e953
+  languageName: node
+  linkType: hard
+
+"unbash@npm:3.0.0":
+  version: 3.0.0
+  resolution: "unbash@npm:3.0.0"
+  checksum: 10c0/8d237237805c8d23a6a7ba9ba1dac612b79431f2458aaa7975c472eba9f429991e46417fd8cdb14c1ad88adffbc0b914d0556ad5978bc42bbd2fa9b0942a4f91
   languageName: node
   linkType: hard
 

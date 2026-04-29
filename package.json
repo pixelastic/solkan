@@ -1,16 +1,16 @@
 {
-  "name": "commands",
+  "name": "solkan",
   "version": "0.0.1",
   "type": "module",
-  "description": "commands module",
+  "description": "CLI tool to validate a commandline against an allowlist of commands",
   "author": "pixelastic",
-  "homepage": "https://github.com/pixelastic/commands",
+  "homepage": "https://github.com/pixelastic/solkan",
   "keywords": [
     "commands"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/pixelastic/commands"
+    "url": "https://github.com/pixelastic/solkan"
   },
   "sideEffects": false,
   "license": "MIT",
@@ -27,6 +27,12 @@
   "main": "./lib/main.js",
   "devDependencies": {
     "aberlaas": "2.27.4"
+  },
+  "dependencies": {
+    "firost": "5.8.0",
+    "golgoth": "3.1.0",
+    "minimist": "1.2.8",
+    "unbash": "3.0.0"
   },
   "scripts": {
     "ci": "./scripts/ci",
