@@ -1,0 +1,48 @@
+#!/usr/bin/env node
+
+import minimist from 'minimist';
+import { readFile } from 'node:fs/promises';
+import { isCommandLineAllowed } from '../lib/main.js';
+
+const args = minimist(process.argv.slice(2));
+
+async function main() {
+  // Parse allowList from --allow-list or --allow-list-file
+  let allowList = [];
+
+  if (args['allow-list']) {
+    // Inline comma-separated list
+    allowList = args['allow-list'].split(',').map((s) => s.trim());
+  } else if (args['allow-list-file']) {
+    // JSON file
+    try {
+      const fileContent = await readFile(args['allow-list-file'], 'utf-8');
+      allowList = JSON.parse(fileContent);
+    } catch (error) {
+      console.error(`Error reading allow-list file: ${error.message}`);
+      process.exit(2);
+    }
+  } else {
+    console.error('Usage: solkan [--allow-list commands] [--allow-list-file file.json] <commandLine>');
+    process.exit(2);
+  }
+
+  // Get the command line to validate (first positional argument)
+  const commandLine = args._[0];
+
+  if (!commandLine) {
+    console.error('Usage: solkan [--allow-list commands] [--allow-list-file file.json] <commandLine>');
+    process.exit(2);
+  }
+
+  // Validate the command
+  const allowed = isCommandLineAllowed(commandLine, allowList);
+
+  if (allowed) {
+    process.exit(0);
+  } else {
+    process.exit(1);
+  }
+}
+
+main();
