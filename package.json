@@ -2,7 +2,39 @@
   "name": "commands",
   "version": "0.0.1",
   "type": "module",
+  "description": "commands module",
+  "author": "pixelastic",
+  "homepage": "https://github.com/pixelastic/commands",
+  "keywords": [
+    "commands"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixelastic/commands"
+  },
+  "sideEffects": false,
   "license": "MIT",
-  "main": "index.js",
-  "packageManager": "yarn@4.14.1"
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "packageManager": "yarn@4.12.0",
+  "files": [
+    "./lib/*.js"
+  ],
+  "exports": {
+    ".": "./lib/main.js"
+  },
+  "main": "./lib/main.js",
+  "devDependencies": {
+    "aberlaas": "2.27.4"
+  },
+  "scripts": {
+    "ci": "./scripts/ci",
+    "compress": "./scripts/compress",
+    "lint": "./scripts/lint",
+    "lint:fix": "./scripts/lint-fix",
+    "release": "./scripts/release",
+    "test": "./scripts/test",
+    "test:watch": "./scripts/test-watch"
+  }
 }
