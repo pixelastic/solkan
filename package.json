@@ -19,7 +19,8 @@
   },
   "packageManager": "yarn@4.12.0",
   "files": [
-    "./lib/*.js"
+    "./lib/*.js",
+    "./lib/helpers/*.js"
   ],
   "exports": {
     ".": "./lib/main.js"
