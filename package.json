@@ -19,6 +19,7 @@
   },
   "packageManager": "yarn@4.12.0",
   "files": [
+    "./CHANGELOG.md",
     "./lib/*.js",
     "./lib/helpers/*.js"
   ],
