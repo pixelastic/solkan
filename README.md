@@ -1,11 +1,11 @@
 # Solkan
 
-A command-line validation tool that validates bash commands against an
-allowlist, with intelligent parsing of complex shell syntax.
-
 <div align="center">
 	<img height="150" src="logo.svg" alt="Solkan">
 </div>
+
+A command-line validation tool that validates bash commands against an
+allowlist, with intelligent parsing of complex shell syntax.
 
 ## Why?
 
