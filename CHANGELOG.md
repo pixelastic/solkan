@@ -1,3 +1,11 @@
+## v0.2.0
+
+[compare changes](https://github.com/pixelastic/solkan/compare/v0.1.0...v0.2.0)
+
+### Features
+
+- **bin:** Add CLI entry point ([7138310](https://github.com/pixelastic/solkan/commit/7138310))
+
 ## v0.1.0
 
 
