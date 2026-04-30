@@ -7,6 +7,10 @@
 A command-line validation tool that validates bash commands against an
 allowlist, with intelligent parsing of complex shell syntax.
 
+<div align="center">
+	<img width="350" src="logo.svg" alt="Solkan">
+</div>
+
 ## Why?
 
 When I use Claude Code, it asks for permission before executing bash commands. I
