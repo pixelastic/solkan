@@ -7408,6 +7408,8 @@ __metadata:
     golgoth: "npm:3.1.0"
     minimist: "npm:1.2.8"
     unbash: "npm:3.0.0"
+  bin:
+    solkan: ./bin/solkan
   languageName: unknown
   linkType: soft
 

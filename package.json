@@ -27,9 +27,7 @@
     ".": "./lib/main.js"
   },
   "main": "./lib/main.js",
-  "bin": {
-    "solkan": "./bin/solkan"
-  },
+  "bin": "./bin/solkan",
   "devDependencies": {
     "aberlaas": "2.27.4"
   },
