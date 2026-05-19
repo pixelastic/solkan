@@ -1,3 +1,11 @@
+## v0.4.0
+
+[compare changes](https://github.com/pixelastic/solkan/compare/v0.3.0...v0.4.0)
+
+### Features
+
+- **extractSimpleCommands:** Handle bash -c same as sh/zsh -c ([9bf894f](https://github.com/pixelastic/solkan/commit/9bf894f))
+
 ## v0.3.0
 
 [compare changes](https://github.com/pixelastic/solkan/compare/v0.2.2...v0.3.0)
