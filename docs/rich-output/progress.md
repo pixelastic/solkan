@@ -26,3 +26,11 @@ issue-003 → needs issue-002
 - Fixed: early return for empty allowList; simplified `isAllowed` tests to wrapper-only cases
 - Skipped feedback: API surface judgement call (exporting `getMatchingPattern` is spec-required)
 - Next: issue-002 — `getCommandLineState`
+
+## Session 2026-05-26 — 002: getCommandLineState
+- Completed: Added `getCommandLineState` in `lib/getCommandLineState.js`, refactored `isCommandLineAllowed` as thin wrapper, exported from `lib/main.js`
+- Tests added: `lib/__tests__/getCommandLineState.js` (6 cases: single allowed, single rejected, pattern vs full command, mixed pipeline, dedup allowed, dedup rejected)
+- Discovered: none
+- Fixed: switched dedup from manual `.includes()` to `_.uniq` per review feedback
+- Skipped feedback: isCommandLineAllowed test assertion update (tests pass, boolean return is the contract); CLI JSON output (issue-003 scope); return-early in _.each callback (stylistic, readable as-is)
+- Next: issue-003 — CLI JSON output

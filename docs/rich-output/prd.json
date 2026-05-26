@@ -51,7 +51,7 @@
       "Call getCommandLineState('echo hello', ['echo'])",
       "Expect result to deep-equal { isAllowed: true, commands: { allowed: ['echo'], rejected: [] } }"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "0002",
@@ -60,7 +60,7 @@
       "Call getCommandLineState('wget evil.com', ['echo'])",
       "Expect result to deep-equal { isAllowed: false, commands: { allowed: [], rejected: ['wget'] } }"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "0002",
@@ -69,7 +69,7 @@
       "Call getCommandLineState('git status --short', ['git status'])",
       "Expect result.commands.allowed to deep-equal ['git status']"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "0002",
@@ -80,7 +80,7 @@
       "Expect result.commands.allowed to deep-equal ['git status', 'grep']",
       "Expect result.commands.rejected to deep-equal ['wget']"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "0002",
@@ -89,7 +89,7 @@
       "Call getCommandLineState('echo foo && echo bar', ['echo'])",
       "Expect result.commands.allowed to deep-equal ['echo'] (not ['echo', 'echo'])"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "0002",
@@ -98,7 +98,7 @@
       "Call getCommandLineState('wget foo && wget bar', ['echo'])",
       "Expect result.commands.rejected to deep-equal ['wget'] (not ['wget', 'wget'])"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "0002",
@@ -107,7 +107,7 @@
       "Call isCommandLineAllowed('echo hello', ['echo'])",
       "Expect return value to be true (boolean)"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "0002",
@@ -116,7 +116,7 @@
       "Call isCommandLineAllowed('wget evil.com', ['echo'])",
       "Expect return value to be false (boolean)"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "0003",
