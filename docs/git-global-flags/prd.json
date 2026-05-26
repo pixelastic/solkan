@@ -91,10 +91,27 @@
   },
   {
     "id": "0002",
-    "description": "getMatchingPattern delegates git commands to getMatchingGitPattern (happy path)",
+    "description": "getMatchingPattern delegates git commands via orchestrator (happy path)",
     "steps": [
       "Call getMatchingPattern('git -C /path status', ['git status'])",
       "Expect return value to be 'git status'"
+    ],
+    "passes": false
+  },
+  {
+    "id": "0002",
+    "description": "getMatchingPattern delegates non-git commands to getMatchingGenericPattern",
+    "steps": [
+      "Call getMatchingPattern('echo hello', ['echo hello'])",
+      "Expect return value to be 'echo hello'"
+    ],
+    "passes": false
+  },
+  {
+    "id": "0002",
+    "description": "getMatchingGenericPattern has its own test file",
+    "steps": [
+      "lib/helpers/__tests__/getMatchingGenericPattern.js exists and passes"
     ],
     "passes": false
   }

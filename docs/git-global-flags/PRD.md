@@ -21,19 +21,23 @@ Teach `getMatchingPattern` to handle git commands specially: when the command st
 
 ## Implementation Decisions
 
-- `getMatchingPattern` gains a git-specific early branch: if the simpleCommand starts with `"git "`, it delegates to a new dedicated helper (`getMatchingGitPattern`) and returns its result immediately.
-- `getMatchingGitPattern` accepts the same signature as `getMatchingPattern` (`simpleCommand`, `allowList`) and returns the same type (`string | null`).
-- `getMatchingGitPattern` normalizes the command by:
-  1. Splitting into tokens and discarding the leading `git` token.
-  2. Iterating tokens left-to-right. For each token:
-     - If it is in the hardcoded list of global flags that take a value (`-C`, `-c`, `--git-dir`, `--work-tree`, `--namespace`, `--super-prefix`, `--exec-path`), skip it and the next token.
-     - If it matches the pattern `--foo=bar` (contains `=`), skip it.
-     - If it starts with `-` but is not in the above list (unknown boolean flag), skip it.
+Three functions, each with a single responsibility:
+
+- **`getMatchingPattern`** (orchestrator) — routes by command type. If `simpleCommand` starts with `"git "`, delegates to `getMatchingGitPattern`. Otherwise delegates to `getMatchingGenericPattern`. Never does matching itself.
+- **`getMatchingGitPattern`** (git-specific) — parses the git command via `unbash`, strips global flags to find the subcommand, then calls `getMatchingGenericPattern("git <subcommand>", allowList)`. Calling `getMatchingGenericPattern` (not `getMatchingPattern`) avoids infinite recursion.
+- **`getMatchingGenericPattern`** (prefix-match) — the standard matching logic: longest-pattern-first, exact match or `pattern + ' '` prefix. Extracted from the original `getMatchingPattern` body.
+
+`getMatchingGitPattern` normalizes the command by:
+  1. Parsing `simpleCommand` with `unbash` and reading the `suffix` array of the first Command node.
+  2. Iterating suffix elements. For each element:
+     - If it starts with `-`: skip it (covers both boolean flags and flags-with-value).
+     - If it contains `=`: skip it (long-form `--foo=bar`).
+     - If its preceding element is a known flag-with-value (`-C`, `-c`, `--git-dir`, `--work-tree`, `--namespace`, `--super-prefix`, `--exec-path`): skip it (the value token).
      - Otherwise it is the subcommand — stop.
-  3. If a subcommand was found, reconstruct `"git <subcommand>"` and delegate to the standard `getMatchingPattern` logic (minus the git branch, to avoid recursion).
-  4. If no subcommand was found (only flags, no positional arg), return `null`.
-- The list of known flags-with-value is a module-level constant, making it easy to extend.
-- `getMatchingGitPattern` lives in the helpers directory alongside the other command-extraction helpers.
+  3. If a subcommand was found, call `getMatchingGenericPattern("git <subcommand>", allowList)`.
+  4. If no subcommand was found, return `null`.
+
+`getMatchingGitPattern` and `getMatchingGenericPattern` live in `lib/helpers/`.
 
 ## Testing Decisions
 
