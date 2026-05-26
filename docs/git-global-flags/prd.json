@@ -1,0 +1,101 @@
+[
+  {
+    "id": "0001",
+    "description": "git -C <path> before subcommand is stripped and subcommand is matched",
+    "steps": [
+      "Call getMatchingGitPattern('git -C /some/path status', ['git status'])",
+      "Expect return value to be 'git status'"
+    ],
+    "passes": true
+  },
+  {
+    "id": "0001",
+    "description": "multiple -C flags are all stripped",
+    "steps": [
+      "Call getMatchingGitPattern('git -C /a -C /b status', ['git status'])",
+      "Expect return value to be 'git status'"
+    ],
+    "passes": true
+  },
+  {
+    "id": "0001",
+    "description": "-c <name=value> flag is stripped",
+    "steps": [
+      "Call getMatchingGitPattern('git -c core.autocrlf=false status', ['git status'])",
+      "Expect return value to be 'git status'"
+    ],
+    "passes": true
+  },
+  {
+    "id": "0001",
+    "description": "--git-dir=<path> long-form flag with = is stripped",
+    "steps": [
+      "Call getMatchingGitPattern('git --git-dir=/path/.git status', ['git status'])",
+      "Expect return value to be 'git status'"
+    ],
+    "passes": true
+  },
+  {
+    "id": "0001",
+    "description": "--work-tree=<path> long-form flag is stripped",
+    "steps": [
+      "Call getMatchingGitPattern('git --work-tree=/path status', ['git status'])",
+      "Expect return value to be 'git status'"
+    ],
+    "passes": true
+  },
+  {
+    "id": "0001",
+    "description": "combination of multiple global flags is stripped",
+    "steps": [
+      "Call getMatchingGitPattern('git -C /path -c user.email=x status', ['git status'])",
+      "Expect return value to be 'git status'"
+    ],
+    "passes": true
+  },
+  {
+    "id": "0001",
+    "description": "no global flags — bare git subcommand still matched",
+    "steps": [
+      "Call getMatchingGitPattern('git status', ['git status'])",
+      "Expect return value to be 'git status'"
+    ],
+    "passes": true
+  },
+  {
+    "id": "0001",
+    "description": "subcommand flags after subcommand are preserved for prefix match",
+    "steps": [
+      "Call getMatchingGitPattern('git status --short', ['git status'])",
+      "Expect return value to be 'git status'"
+    ],
+    "passes": true
+  },
+  {
+    "id": "0001",
+    "description": "no subcommand present — returns null",
+    "steps": [
+      "Call getMatchingGitPattern('git -C /path', ['git status'])",
+      "Expect return value to be null"
+    ],
+    "passes": true
+  },
+  {
+    "id": "0001",
+    "description": "subcommand not in allowlist — returns null",
+    "steps": [
+      "Call getMatchingGitPattern('git -C /path status', ['git log'])",
+      "Expect return value to be null"
+    ],
+    "passes": true
+  },
+  {
+    "id": "0002",
+    "description": "getMatchingPattern delegates git commands to getMatchingGitPattern (happy path)",
+    "steps": [
+      "Call getMatchingPattern('git -C /path status', ['git status'])",
+      "Expect return value to be 'git status'"
+    ],
+    "passes": false
+  }
+]
