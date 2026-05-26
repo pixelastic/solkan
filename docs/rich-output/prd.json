@@ -126,7 +126,7 @@
       "Expect exit code 0",
       "Expect stdout to be valid JSON with isAllowed: true, commands.allowed: ['echo'], commands.rejected: []"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "0003",
@@ -136,7 +136,7 @@
       "Expect exit code 1",
       "Expect stdout to be valid JSON with isAllowed: false, commands.allowed: [], commands.rejected: ['wget']"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "0003",
@@ -147,6 +147,6 @@
       "Expect stdout to be empty",
       "Expect stderr to contain usage message"
     ],
-    "passes": false
+    "passes": true
   }
 ]

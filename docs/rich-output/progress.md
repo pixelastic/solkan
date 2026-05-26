@@ -34,3 +34,11 @@ issue-003 → needs issue-002
 - Fixed: switched dedup from manual `.includes()` to `_.uniq` per review feedback
 - Skipped feedback: isCommandLineAllowed test assertion update (tests pass, boolean return is the contract); CLI JSON output (issue-003 scope); return-early in _.each callback (stylistic, readable as-is)
 - Next: issue-003 — CLI JSON output
+
+## Session 2026-05-26 — 003: CLI JSON output
+- Completed: Updated `bin/solkan` to call `getCommandLineState` instead of `isCommandLineAllowed`, prints `JSON.stringify(result)` to stdout before exiting; exit codes unchanged (0/1/2)
+- Tests added: `bin/__tests__/solkan.js` (4 cases: allowed → exit 0 + JSON, rejected → exit 1 + JSON, missing --allow-list → exit 2 stderr only, missing command arg → exit 2 stderr only)
+- Discovered: `firost.run` uses `parseCommandString` (no shell) by default — requires `{ shell: true }` to handle quoted CLI args in tests
+- Fixed: return-early pattern for exit codes (review feedback); added missing-command-arg usage-error test case (review feedback)
+- Skipped feedback: JSON shape validation (covered by getCommandLineState unit tests); error guard around getCommandLineState (synchronous, can't throw); stdout:false concern (firost source confirms capture is unaffected); JSDoc vagueness (low severity)
+- Next: all issues complete

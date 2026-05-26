@@ -2,7 +2,7 @@
 
 import minimist from 'minimist';
 import { readFile } from 'node:fs/promises';
-import { isCommandLineAllowed } from '../lib/main.js';
+import { getCommandLineState } from '../lib/main.js';
 
 const args = minimist(process.argv.slice(2));
 
@@ -35,14 +35,11 @@ async function main() {
     process.exit(2);
   }
 
-  // Validate the command
-  const allowed = isCommandLineAllowed(commandLine, allowList);
-
-  if (allowed) {
-    process.exit(0);
-  } else {
-    process.exit(1);
-  }
+  // Validate the command and output JSON result
+  const result = getCommandLineState(commandLine, allowList);
+  console.log(JSON.stringify(result));
+  if (!result.isAllowed) process.exit(1);
+  process.exit(0);
 }
 
 main();
