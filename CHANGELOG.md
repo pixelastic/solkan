@@ -1,3 +1,11 @@
+## v0.5.0
+
+[compare changes](https://github.com/pixelastic/solkan/compare/v0.4.1...v0.5.0)
+
+### Features
+
+- **extractSimpleCommands:** Support `rtk` as a transparent prefix command ([897061f](https://github.com/pixelastic/solkan/commit/897061f))
+
 ## v0.4.1
 
 [compare changes](https://github.com/pixelastic/solkan/compare/v0.4.0...v0.4.1)
