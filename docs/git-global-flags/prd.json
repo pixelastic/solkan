@@ -96,7 +96,7 @@
       "Call getMatchingPattern('git -C /path status', ['git status'])",
       "Expect return value to be 'git status'"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "0002",
@@ -105,7 +105,7 @@
       "Call getMatchingPattern('echo hello', ['echo hello'])",
       "Expect return value to be 'echo hello'"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "0002",
@@ -113,6 +113,6 @@
     "steps": [
       "lib/helpers/__tests__/getMatchingGenericPattern.js exists and passes"
     ],
-    "passes": false
+    "passes": true
   }
 ]
