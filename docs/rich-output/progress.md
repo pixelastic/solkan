@@ -18,3 +18,11 @@ issue-003 → needs issue-002
 
 ---
 ## Log (append below when an issue is completed)
+
+## Session 2026-05-26 — 001: getMatchingPattern
+- Completed: Added `getMatchingPattern` in `lib/getMatchingPattern.js`, refactored `isAllowed` as thin wrapper, exported from `lib/main.js`
+- Tests added: `lib/__tests__/getMatchingPattern.js` (4 cases: single-word match, multi-word match, no match, empty list)
+- Discovered: none
+- Fixed: early return for empty allowList; simplified `isAllowed` tests to wrapper-only cases
+- Skipped feedback: API surface judgement call (exporting `getMatchingPattern` is spec-required)
+- Next: issue-002 — `getCommandLineState`

