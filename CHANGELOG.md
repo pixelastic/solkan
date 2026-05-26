@@ -1,3 +1,13 @@
+## v0.6.0
+
+[compare changes](https://github.com/pixelastic/solkan/compare/v0.5.0...v0.6.0)
+
+### Features
+
+- **lib:** Add getMatchingPattern and refactor isAllowed as thin wrapper ([f1ed931](https://github.com/pixelastic/solkan/commit/f1ed931))
+- **lib:** Add getCommandLineState to analyse command lines against an allow list ([28fcd70](https://github.com/pixelastic/solkan/commit/28fcd70))
+- **cli:** Output JSON result to stdout instead of exiting silently ([6549253](https://github.com/pixelastic/solkan/commit/6549253))
+
 ## v0.5.0
 
 [compare changes](https://github.com/pixelastic/solkan/compare/v0.4.1...v0.5.0)
