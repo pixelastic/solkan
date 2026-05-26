@@ -1,6 +1,6 @@
 {
   "name": "solkan",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "type": "module",
   "description": "CLI tool to validate a commandline against an allowlist of commands",
   "author": "pixelastic",

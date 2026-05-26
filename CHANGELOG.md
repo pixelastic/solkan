@@ -1,3 +1,9 @@
+## v0.6.2
+
+[compare changes](https://github.com/pixelastic/solkan/compare/v0.6.1...v0.6.2)
+
+fix(git): Fix bug where "git worktree list" wouldn't be matched
+
 ## v0.6.1
 
 [compare changes](https://github.com/pixelastic/solkan/compare/v0.6.0...v0.6.1)
