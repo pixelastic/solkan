@@ -1,3 +1,11 @@
+## v0.7.0
+
+[compare changes](https://github.com/pixelastic/solkan/compare/v0.6.2...v0.7.0)
+
+### Features
+
+- **helpers:** Add extractFromRtkCommand to distinguish native rtk subcommands from transparent wrappers ([ca1ba96](https://github.com/pixelastic/solkan/commit/ca1ba96))
+
 ## v0.6.2
 
 [compare changes](https://github.com/pixelastic/solkan/compare/v0.6.1...v0.6.2)
