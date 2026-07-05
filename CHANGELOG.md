@@ -1,3 +1,11 @@
+## v0.8.0
+
+[compare changes](https://github.com/pixelastic/solkan/compare/v0.7.0...v0.8.0)
+
+### Features
+
+- **glob-allowlist:** Support glob patterns in command allowlists ([2d760d5](https://github.com/pixelastic/solkan/commit/2d760d5))
+
 ## v0.7.0
 
 [compare changes](https://github.com/pixelastic/solkan/compare/v0.6.2...v0.7.0)
