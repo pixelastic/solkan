@@ -2,7 +2,8 @@
   {
     "id": "01",
     "issue": "issues/01-glob-matching.md",
-    "done": false,
-    "blocked_by": []
+    "done": true,
+    "blocked_by": [],
+    "recap": "Added glob matching to getMatchingGenericPattern via minimatch; isGlob predicate gates the glob branch; minimatch receives the full simpleCommand (spaces are not path separators so * still correctly rejects dir/foo/bar)."
   }
 ]

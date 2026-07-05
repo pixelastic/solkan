@@ -25,4 +25,7 @@ This plan adds glob pattern support to solkan's allowlist matcher.
 
 ## Discoveries
 
-_Append findings here after each issue is completed._
+### Issue 01 — Glob matching
+
+- minimatch's `*` does not match `/`, so `dir/foo*` correctly rejects `dir/foo/bar` — pass `simpleCommand` (full command with args) directly; no need to strip args first since spaces are not path separators.
+- `isGlob` kept as a standalone module-private function (not in `__` object) — the `__` pattern is for mockable/injectable helpers; a one-liner pure predicate doesn't need it.

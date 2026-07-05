@@ -34,6 +34,7 @@
   "dependencies": {
     "firost": "5.8.0",
     "golgoth": "3.1.0",
+    "minimatch": "10.2.5",
     "minimist": "1.2.8",
     "unbash": "3.0.0"
   },
