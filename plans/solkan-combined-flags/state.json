@@ -1,9 +1,0 @@
-[
-  {
-    "id": "01",
-    "issue": "issues/01-combined-c-flag.md",
-    "done": true,
-    "blocked_by": [],
-    "recap": "Match -c within combined single-dash flags in extractCommandLineFromShC"
-  }
-]
