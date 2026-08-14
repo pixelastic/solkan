@@ -14,3 +14,8 @@
 - Recursive splicing: for sh -c / xargs / rtk, rewrite inner string independently, splice back preserving quote style
 
 ## Discoveries
+
+### Issue 02 — Rewrite recursive cases
+- `time` is modeled as a Pipeline annotation (`time: true`), not a Command node — no explicit prefix handling needed in rewriteCommandLine
+- sh -c quote style is detectable from `argNode.text[0]` — reconstruct with same char around rewritten value
+- xargs private `findFirstCommandIndex` can be imported via `{ __ as xargsPrivate }` to reuse flag-skipping logic

@@ -9,8 +9,9 @@
   {
     "id": "02",
     "issue": "issues/02-rewrite-recursive-cases.md",
-    "done": false,
-    "blocked_by": ["01"]
+    "done": true,
+    "blocked_by": ["01"],
+    "recap": "Extended rewriteCommandLine with recursive cases: sh -c (quote-preserving splice), xargs, rtk, loops, and implicit time support"
   },
   {
     "id": "03",
