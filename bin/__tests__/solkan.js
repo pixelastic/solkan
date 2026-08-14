@@ -11,6 +11,7 @@ describe('solkan CLI', () => {
       const result = await run(`node ./bin/solkan ${args}`, {
         shell: true,
         stdout: false,
+        stderr: false,
       });
       return { stdout: result.stdout, stderr: result.stderr, exitCode: 0 };
     } catch (err) {
