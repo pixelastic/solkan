@@ -2,8 +2,9 @@
   {
     "id": "01",
     "issue": "issues/01-rewrite-simple-commands.md",
-    "done": false,
-    "blocked_by": []
+    "done": true,
+    "blocked_by": [],
+    "recap": "Added rewriteCommandLine with AST position-based replacement for simple and compound commands"
   },
   {
     "id": "02",
