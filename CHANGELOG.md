@@ -1,3 +1,11 @@
+## v0.9.0
+
+[compare changes](https://github.com/pixelastic/solkan/compare/v0.8.0...v0.9.0)
+
+### Features
+
+- **command-parser:** Support combined shell flags containing -c ([cc526c3](https://github.com/pixelastic/solkan/commit/cc526c3))
+
 ## v0.8.0
 
 [compare changes](https://github.com/pixelastic/solkan/compare/v0.7.0...v0.8.0)
