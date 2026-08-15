@@ -14,6 +14,12 @@
     "recap": "Extended rewriteCommandLine with recursive cases: sh -c (quote-preserving splice), xargs, rtk, loops, and implicit time support"
   },
   {
+    "id": "05",
+    "issue": "issues/05-shared-ast-walker.md",
+    "done": false,
+    "blocked_by": ["02"]
+  },
+  {
     "id": "03",
     "issue": "issues/03-restructure-cli-output.md",
     "done": false,
