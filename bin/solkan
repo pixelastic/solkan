@@ -7,22 +7,11 @@ import { getCommandLineState } from '../lib/main.js';
 const args = minimist(process.argv.slice(2));
 
 async function main() {
-  // Parse allowList from --allow-list or --allow-list-file
-  let allowList = [];
+  const hasAllowList = args['allow-list'] || args['allow-list-file'];
+  const hasRewriteList = args['rewrite-list-file'];
 
-  if (args['allow-list']) {
-    // Inline comma-separated list
-    allowList = args['allow-list'].split(',').map((s) => s.trim());
-  } else if (args['allow-list-file']) {
-    // JSON file
-    try {
-      const fileContent = await readFile(args['allow-list-file'], 'utf-8');
-      allowList = JSON.parse(fileContent);
-    } catch (error) {
-      console.error(`Error reading allow-list file: ${error.message}`);
-      process.exit(2);
-    }
-  } else {
+  // Require at least one feature flag
+  if (!hasAllowList && !hasRewriteList) {
     console.error('Usage: solkan [--allow-list commands] [--allow-list-file file.json] <commandLine>');
     process.exit(2);
   }
@@ -35,10 +24,38 @@ async function main() {
     process.exit(2);
   }
 
-  // Validate the command and output JSON result
-  const result = getCommandLineState(commandLine, allowList);
-  console.log(JSON.stringify(result));
-  if (!result.isAllowed) process.exit(1);
+  const output = {};
+  let isAllowed = true;
+
+  // Build allow output when allow-list flags are present
+  if (hasAllowList) {
+    let allowList = [];
+
+    if (args['allow-list']) {
+      // Inline comma-separated list
+      allowList = args['allow-list'].split(',').map((s) => s.trim());
+    } else if (args['allow-list-file']) {
+      // JSON file
+      try {
+        const fileContent = await readFile(args['allow-list-file'], 'utf-8');
+        allowList = JSON.parse(fileContent);
+      } catch (error) {
+        console.error(`Error reading allow-list file: ${error.message}`);
+        process.exit(2);
+      }
+    }
+
+    const result = getCommandLineState(commandLine, allowList);
+    output.allow = {
+      isAllowed: result.isAllowed,
+      allowed: result.commands.allowed,
+      rejected: result.commands.rejected,
+    };
+    isAllowed = result.isAllowed;
+  }
+
+  console.log(JSON.stringify(output));
+  if (!isAllowed) process.exit(1);
   process.exit(0);
 }
 

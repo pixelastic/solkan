@@ -22,8 +22,9 @@
   {
     "id": "03",
     "issue": "issues/03-restructure-cli-output.md",
-    "done": false,
-    "blocked_by": []
+    "done": true,
+    "blocked_by": [],
+    "recap": "Restructured CLI output: validation result under allow key, exit 2 when no feature flags"
   },
   {
     "id": "04",
