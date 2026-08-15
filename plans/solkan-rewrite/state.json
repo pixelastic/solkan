@@ -29,7 +29,8 @@
   {
     "id": "04",
     "issue": "issues/04-wire-rewrite-flag-into-cli.md",
-    "done": false,
-    "blocked_by": ["01", "03"]
+    "done": true,
+    "blocked_by": ["01", "03"],
+    "recap": "Wired --rewrite-list-file into CLI: loads/validates JSON map, rewrites before validation, adds rewrite key to output"
   }
 ]

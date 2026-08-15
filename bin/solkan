@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
 import minimist from 'minimist';
-import { readFile } from 'node:fs/promises';
+import { readJson } from 'firost';
 import { getCommandLineState } from '../lib/main.js';
+import { rewriteCommandLine } from '../lib/rewriteCommandLine.js';
 
 const args = minimist(process.argv.slice(2));
 
@@ -26,6 +27,34 @@ async function main() {
 
   const output = {};
   let isAllowed = true;
+  let effectiveCommandLine = commandLine;
+
+  // Load and apply rewrite map when flag is present
+  if (hasRewriteList) {
+    let rewriteData;
+    try {
+      rewriteData = await readJson(args['rewrite-list-file']);
+    } catch (error) {
+      console.error(`Error reading rewrite-list file: ${error.message}`);
+      process.exit(2);
+    }
+
+    if (
+      typeof rewriteData !== 'object' ||
+      rewriteData === null ||
+      Array.isArray(rewriteData)
+    ) {
+      console.error('Error: rewrite-list file must contain a flat JSON object');
+      process.exit(2);
+    }
+
+    const rewriteMap = new Map(Object.entries(rewriteData));
+    const rewritten = rewriteCommandLine(commandLine, rewriteMap);
+    if (rewritten !== commandLine) {
+      output.rewrite = rewritten;
+      effectiveCommandLine = rewritten;
+    }
+  }
 
   // Build allow output when allow-list flags are present
   if (hasAllowList) {
@@ -37,15 +66,14 @@ async function main() {
     } else if (args['allow-list-file']) {
       // JSON file
       try {
-        const fileContent = await readFile(args['allow-list-file'], 'utf-8');
-        allowList = JSON.parse(fileContent);
+        allowList = await readJson(args['allow-list-file']);
       } catch (error) {
         console.error(`Error reading allow-list file: ${error.message}`);
         process.exit(2);
       }
     }
 
-    const result = getCommandLineState(commandLine, allowList);
+    const result = getCommandLineState(effectiveCommandLine, allowList);
     output.allow = {
       isAllowed: result.isAllowed,
       allowed: result.commands.allowed,

@@ -15,6 +15,11 @@
 
 ## Discoveries
 
+### Issue 04 — Wire rewrite into CLI
+- firost `writeJson` signature is `writeJson(content, filepath)` not `writeJson(filepath, content)`
+- firost `write` signature is `write(content, filepath)` (same inverted convention)
+- `rewriteCommandLine` expects a `Map`, not a plain object — use `new Map(Object.entries(data))` to convert
+
 ### Issue 02 — Rewrite recursive cases
 - `time` is modeled as a Pipeline annotation (`time: true`), not a Command node — no explicit prefix handling needed in rewriteCommandLine
 - sh -c quote style is detectable from `argNode.text[0]` — reconstruct with same char around rewritten value
