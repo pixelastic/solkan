@@ -16,8 +16,9 @@
   {
     "id": "05",
     "issue": "issues/05-shared-ast-walker.md",
-    "done": false,
-    "blocked_by": ["02"]
+    "done": true,
+    "blocked_by": ["02"],
+    "recap": "Extracted shared walkCommandAST from duplicated dispatch logic in extractSimpleCommands and rewriteCommandLine"
   },
   {
     "id": "03",
