@@ -1,3 +1,11 @@
+## v0.11.0
+
+[compare changes](https://github.com/pixelastic/solkan/compare/v0.10.0...v0.11.0)
+
+### Features
+
+- **solkan:** Wire --rewrite-list-file flag into CLI ([13c8297](https://github.com/pixelastic/solkan/commit/13c8297))
+
 ## v0.10.0
 
 [compare changes](https://github.com/pixelastic/solkan/compare/v0.9.0...v0.10.0)
