@@ -1,3 +1,12 @@
+## v0.12.0
+
+[compare changes](https://github.com/pixelastic/solkan/compare/v0.11.0...v0.12.0)
+
+### Features
+
+- **--allow-list-file:** Allow passing multiple `--allow-list-file` that gets merged
+- **--rewrite-list-file:** Allow passing multiple `--rewrite-list-file` that gets merged
+
 ## v0.11.0
 
 [compare changes](https://github.com/pixelastic/solkan/compare/v0.10.0...v0.11.0)
