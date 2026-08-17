@@ -9,8 +9,9 @@
   {
     "id": "02",
     "issue": "issues/02-load-rewrite-map.md",
-    "done": false,
-    "blocked_by": []
+    "done": true,
+    "blocked_by": [],
+    "recap": "Created loadRewriteMap(paths) that reads JSON files, validates plain objects, merges them left-to-right, and returns a Map"
   },
   {
     "id": "03",
