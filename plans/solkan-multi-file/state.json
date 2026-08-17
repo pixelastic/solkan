@@ -16,7 +16,8 @@
   {
     "id": "03",
     "issue": "issues/03-wire-cli.md",
-    "done": false,
-    "blocked_by": ["01", "02"]
+    "done": true,
+    "blocked_by": ["01", "02"],
+    "recap": "Rewired bin/solkan to delegate file loading to loadAllowList/loadRewriteMap, normalizing args to arrays for multi-file support"
   }
 ]
