@@ -13,3 +13,6 @@
 - Use `/tdd` skill for test-driven development
 
 ## Discoveries
+
+### Issue 01 — loadAllowList
+- firost `writeJson` signature is `(content, filepath)`, not `(filepath, content)`

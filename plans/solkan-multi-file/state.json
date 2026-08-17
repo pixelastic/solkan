@@ -2,8 +2,9 @@
   {
     "id": "01",
     "issue": "issues/01-load-allow-list.md",
-    "done": false,
-    "blocked_by": []
+    "done": true,
+    "blocked_by": [],
+    "recap": "Created loadAllowList(paths) that reads JSON files, validates arrays, and concatenates them"
   },
   {
     "id": "02",
