@@ -7437,7 +7437,7 @@ __metadata:
     golgoth: "npm:3.1.0"
     minimatch: "npm:10.2.5"
     minimist: "npm:1.2.8"
-    unbash: "npm:3.0.0"
+    unbash: "npm:4.0.11"
   bin:
     solkan: ./bin/solkan
   languageName: unknown
@@ -8129,10 +8129,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unbash@npm:3.0.0":
-  version: 3.0.0
-  resolution: "unbash@npm:3.0.0"
-  checksum: 10c0/8d237237805c8d23a6a7ba9ba1dac612b79431f2458aaa7975c472eba9f429991e46417fd8cdb14c1ad88adffbc0b914d0556ad5978bc42bbd2fa9b0942a4f91
+"unbash@npm:4.0.11":
+  version: 4.0.11
+  resolution: "unbash@npm:4.0.11"
+  checksum: 10c0/d140a1dbff0ce488a710b3605be1b42a27b6601ba70d5a844737cedb96aa8b2f7c59211a972f5e1779af4c2b76235a5f69a8321c5a8bd2eaf9b91399ef9085c4
   languageName: node
   linkType: hard
 
