@@ -29,7 +29,7 @@
   "main": "./lib/main.js",
   "bin": "./bin/solkan",
   "devDependencies": {
-    "aberlaas": "2.35.0"
+    "aberlaas": "2.39.0"
   },
   "dependencies": {
     "firost": "5.11.0",
