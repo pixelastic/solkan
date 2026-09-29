@@ -1,3 +1,11 @@
+## v0.13.0
+
+[compare changes](https://github.com/pixelastic/solkan/compare/v0.12.0...v0.13.0)
+
+### Bug Fixes
+
+- **extractSimpleCommands:** Filter shell builtins from extracted commands ([18c794c](https://github.com/pixelastic/solkan/commit/18c794c))
+
 ## v0.12.0
 
 [compare changes](https://github.com/pixelastic/solkan/compare/v0.11.0...v0.12.0)
