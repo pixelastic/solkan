@@ -46,5 +46,8 @@
     "release": "./scripts/release",
     "test": "./scripts/test",
     "test:watch": "./scripts/test-watch"
+  },
+  "aberlaas": {
+    "trustedPublisher": true
   }
 }
