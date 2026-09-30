@@ -1,3 +1,11 @@
+## v0.13.1
+
+[compare changes](https://github.com/pixelastic/solkan/compare/v0.13.0...v0.13.1)
+
+### Features
+
+- **extractSimpleCommands:** Recognize colon as a shell builtin no-op ([afed6f0](https://github.com/pixelastic/solkan/commit/afed6f0))
+
 ## v0.13.0
 
 [compare changes](https://github.com/pixelastic/solkan/compare/v0.12.0...v0.13.0)
