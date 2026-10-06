@@ -4,7 +4,7 @@ import minimist from 'minimist';
 import { getCommandLineState } from '../lib/main.js';
 import { rewriteCommandLine } from '../lib/rewriteCommandLine.js';
 import { loadAllowList } from '../lib/loadAllowList.js';
-import { loadRewriteMap } from '../lib/loadRewriteMap.js';
+import { loadRewriteList } from '../lib/loadRewriteList.js';
 
 const args = minimist(process.argv.slice(2));
 
@@ -14,7 +14,9 @@ async function main() {
 
   // Require at least one feature flag
   if (!hasAllowList && !hasRewriteList) {
-    console.error('Usage: solkan [--allow-list commands] [--allow-list-file file.json] <commandLine>');
+    console.error(
+      'Usage: solkan [--allow-list commands] [--allow-list-file file.json] <commandLine>',
+    );
     process.exit(2);
   }
 
@@ -22,7 +24,9 @@ async function main() {
   const commandLine = args._[0];
 
   if (!commandLine) {
-    console.error('Usage: solkan [--allow-list commands] [--allow-list-file file.json] <commandLine>');
+    console.error(
+      'Usage: solkan [--allow-list commands] [--allow-list-file file.json] <commandLine>',
+    );
     process.exit(2);
   }
 
@@ -30,18 +34,18 @@ async function main() {
   let isAllowed = true;
   let effectiveCommandLine = commandLine;
 
-  // Load and apply rewrite map when flag is present
+  // Load and apply rewrite list when flag is present
   if (hasRewriteList) {
-    let rewriteMap;
+    let rewriteList;
     try {
       const paths = [].concat(args['rewrite-list-file']);
-      rewriteMap = await loadRewriteMap(paths);
+      rewriteList = await loadRewriteList(paths);
     } catch (error) {
       console.error(`Error reading rewrite-list file: ${error.message}`);
       process.exit(2);
     }
 
-    const rewritten = rewriteCommandLine(commandLine, rewriteMap);
+    const rewritten = rewriteCommandLine(commandLine, rewriteList);
     if (rewritten !== commandLine) {
       output.rewrite = rewritten;
       effectiveCommandLine = rewritten;
