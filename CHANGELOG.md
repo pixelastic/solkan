@@ -1,3 +1,17 @@
+## v0.14.0
+
+[compare changes](https://github.com/pixelastic/solkan/compare/v0.13.1...v0.14.0)
+
+### Features
+
+- **extract:** Detect command substitutions in command arguments ([6143261](https://github.com/pixelastic/solkan/commit/6143261))
+- **rewrite:** Rewrite commands inside command substitutions ([b21aebf](https://github.com/pixelastic/solkan/commit/b21aebf))
+
+### Bug Fixes
+
+- **substitutions:** Detect command substitutions in backticks and for-loop word lists ([e417474](https://github.com/pixelastic/solkan/commit/e417474))
+- **walkCommandAST:** Detect command substitutions in assignments ([9ecaf84](https://github.com/pixelastic/solkan/commit/9ecaf84))
+
 ## v0.13.1
 
 [compare changes](https://github.com/pixelastic/solkan/compare/v0.13.0...v0.13.1)
