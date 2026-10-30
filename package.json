@@ -34,9 +34,9 @@
   "dependencies": {
     "firost": "5.11.0",
     "golgoth": "3.1.0",
-    "minimatch": "10.2.6",
+    "minimatch": "11.0.3",
     "minimist": "1.2.8",
-    "unbash": "3.0.0"
+    "unbash": "6.0.2"
   },
   "scripts": {
     "ci": "./scripts/ci",
