@@ -1,16 +1,29 @@
+## v0.14.1
+
+[compare changes](https://github.com/pixelastic/solkan/compare/v0.14.0...v0.14.1)
+
+### Bug Fixes
+
+- **shell:** Extract command substitutions inside bracket globs
+  ([7f8424c](https://github.com/pixelastic/solkan/commit/7f8424c))
+
 ## v0.14.0
 
 [compare changes](https://github.com/pixelastic/solkan/compare/v0.13.1...v0.14.0)
 
 ### Features
 
-- **extract:** Detect command substitutions in command arguments ([6143261](https://github.com/pixelastic/solkan/commit/6143261))
-- **rewrite:** Rewrite commands inside command substitutions ([b21aebf](https://github.com/pixelastic/solkan/commit/b21aebf))
+- **extract:** Detect command substitutions in command arguments
+  ([6143261](https://github.com/pixelastic/solkan/commit/6143261))
+- **rewrite:** Rewrite commands inside command substitutions
+  ([b21aebf](https://github.com/pixelastic/solkan/commit/b21aebf))
 
 ### Bug Fixes
 
-- **substitutions:** Detect command substitutions in backticks and for-loop word lists ([e417474](https://github.com/pixelastic/solkan/commit/e417474))
-- **walkCommandAST:** Detect command substitutions in assignments ([9ecaf84](https://github.com/pixelastic/solkan/commit/9ecaf84))
+- **substitutions:** Detect command substitutions in backticks and for-loop word
+  lists ([e417474](https://github.com/pixelastic/solkan/commit/e417474))
+- **walkCommandAST:** Detect command substitutions in assignments
+  ([9ecaf84](https://github.com/pixelastic/solkan/commit/9ecaf84))
 
 ## v0.13.1
 
@@ -18,7 +31,8 @@
 
 ### Features
 
-- **extractSimpleCommands:** Recognize colon as a shell builtin no-op ([afed6f0](https://github.com/pixelastic/solkan/commit/afed6f0))
+- **extractSimpleCommands:** Recognize colon as a shell builtin no-op
+  ([afed6f0](https://github.com/pixelastic/solkan/commit/afed6f0))
 
 ## v0.13.0
 
@@ -26,7 +40,8 @@
 
 ### Bug Fixes
 
-- **extractSimpleCommands:** Filter shell builtins from extracted commands ([18c794c](https://github.com/pixelastic/solkan/commit/18c794c))
+- **extractSimpleCommands:** Filter shell builtins from extracted commands
+  ([18c794c](https://github.com/pixelastic/solkan/commit/18c794c))
 
 ## v0.12.0
 
@@ -34,8 +49,10 @@
 
 ### Features
 
-- **--allow-list-file:** Allow passing multiple `--allow-list-file` that gets merged
-- **--rewrite-list-file:** Allow passing multiple `--rewrite-list-file` that gets merged
+- **--allow-list-file:** Allow passing multiple `--allow-list-file` that gets
+  merged
+- **--rewrite-list-file:** Allow passing multiple `--rewrite-list-file` that
+  gets merged
 
 ## v0.11.0
 
@@ -43,7 +60,8 @@
 
 ### Features
 
-- **solkan:** Wire --rewrite-list-file flag into CLI ([13c8297](https://github.com/pixelastic/solkan/commit/13c8297))
+- **solkan:** Wire --rewrite-list-file flag into CLI
+  ([13c8297](https://github.com/pixelastic/solkan/commit/13c8297))
 
 ## v0.10.0
 
@@ -51,7 +69,8 @@
 
 ### Features
 
-- **command-parser:** Support combined shell flags containing -c ([f66e748](https://github.com/pixelastic/solkan/commit/f66e748))
+- **command-parser:** Support combined shell flags containing -c
+  ([f66e748](https://github.com/pixelastic/solkan/commit/f66e748))
 
 ## v0.9.0
 
@@ -59,7 +78,8 @@
 
 ### Features
 
-- **command-parser:** Support combined shell flags containing -c ([cc526c3](https://github.com/pixelastic/solkan/commit/cc526c3))
+- **command-parser:** Support combined shell flags containing -c
+  ([cc526c3](https://github.com/pixelastic/solkan/commit/cc526c3))
 
 ## v0.8.0
 
@@ -67,7 +87,8 @@
 
 ### Features
 
-- **glob-allowlist:** Support glob patterns in command allowlists ([2d760d5](https://github.com/pixelastic/solkan/commit/2d760d5))
+- **glob-allowlist:** Support glob patterns in command allowlists
+  ([2d760d5](https://github.com/pixelastic/solkan/commit/2d760d5))
 
 ## v0.7.0
 
@@ -75,7 +96,9 @@
 
 ### Features
 
-- **helpers:** Add extractFromRtkCommand to distinguish native rtk subcommands from transparent wrappers ([ca1ba96](https://github.com/pixelastic/solkan/commit/ca1ba96))
+- **helpers:** Add extractFromRtkCommand to distinguish native rtk subcommands
+  from transparent wrappers
+  ([ca1ba96](https://github.com/pixelastic/solkan/commit/ca1ba96))
 
 ## v0.6.2
 
@@ -93,9 +116,12 @@ fix(git): Fix bug where "git worktree list" wouldn't be matched
 
 ### Features
 
-- **lib:** Add getMatchingPattern and refactor isAllowed as thin wrapper ([f1ed931](https://github.com/pixelastic/solkan/commit/f1ed931))
-- **lib:** Add getCommandLineState to analyse command lines against an allow list ([28fcd70](https://github.com/pixelastic/solkan/commit/28fcd70))
-- **cli:** Output JSON result to stdout instead of exiting silently ([6549253](https://github.com/pixelastic/solkan/commit/6549253))
+- **lib:** Add getMatchingPattern and refactor isAllowed as thin wrapper
+  ([f1ed931](https://github.com/pixelastic/solkan/commit/f1ed931))
+- **lib:** Add getCommandLineState to analyse command lines against an allow
+  list ([28fcd70](https://github.com/pixelastic/solkan/commit/28fcd70))
+- **cli:** Output JSON result to stdout instead of exiting silently
+  ([6549253](https://github.com/pixelastic/solkan/commit/6549253))
 
 ## v0.5.0
 
@@ -103,7 +129,8 @@ fix(git): Fix bug where "git worktree list" wouldn't be matched
 
 ### Features
 
-- **extractSimpleCommands:** Support `rtk` as a transparent prefix command ([897061f](https://github.com/pixelastic/solkan/commit/897061f))
+- **extractSimpleCommands:** Support `rtk` as a transparent prefix command
+  ([897061f](https://github.com/pixelastic/solkan/commit/897061f))
 
 ## v0.4.1
 
@@ -111,7 +138,8 @@ fix(git): Fix bug where "git worktree list" wouldn't be matched
 
 ### Bug Fixes
 
-- **extractSimpleCommands:** Correctly handle env-var-only assignments ([aca0a6c](https://github.com/pixelastic/solkan/commit/aca0a6c))
+- **extractSimpleCommands:** Correctly handle env-var-only assignments
+  ([aca0a6c](https://github.com/pixelastic/solkan/commit/aca0a6c))
 
 ## v0.4.0
 
@@ -119,7 +147,8 @@ fix(git): Fix bug where "git worktree list" wouldn't be matched
 
 ### Features
 
-- **extractSimpleCommands:** Handle bash -c same as sh/zsh -c ([9bf894f](https://github.com/pixelastic/solkan/commit/9bf894f))
+- **extractSimpleCommands:** Handle bash -c same as sh/zsh -c
+  ([9bf894f](https://github.com/pixelastic/solkan/commit/9bf894f))
 
 ## v0.3.0
 
@@ -127,7 +156,8 @@ fix(git): Fix bug where "git worktree list" wouldn't be matched
 
 ### Features
 
-- **extractSimpleCommands:** Handle zsh -c the same as sh -c ([0d18806](https://github.com/pixelastic/solkan/commit/0d18806))
+- **extractSimpleCommands:** Handle zsh -c the same as sh -c
+  ([0d18806](https://github.com/pixelastic/solkan/commit/0d18806))
 
 ## v0.2.2
 
@@ -143,14 +173,18 @@ fix(git): Fix bug where "git worktree list" wouldn't be matched
 
 ### Features
 
-- **bin:** Add CLI entry point ([7138310](https://github.com/pixelastic/solkan/commit/7138310))
+- **bin:** Add CLI entry point
+  ([7138310](https://github.com/pixelastic/solkan/commit/7138310))
 
 ## v0.1.0
 
-
 ### Features
 
-- **commands:** Add command allowlist validation ([e19a5ca](https://github.com/pixelastic/solkan/commit/e19a5ca))
-- **cli:** Add solkan CLI tool for command validation ([d478e8d](https://github.com/pixelastic/solkan/commit/d478e8d))
-- **commands:** Add time command prefix support ([10450a0](https://github.com/pixelastic/solkan/commit/10450a0))
-- **xargs:** Add xargs command extraction support ([dd3df92](https://github.com/pixelastic/solkan/commit/dd3df92))
+- **commands:** Add command allowlist validation
+  ([e19a5ca](https://github.com/pixelastic/solkan/commit/e19a5ca))
+- **cli:** Add solkan CLI tool for command validation
+  ([d478e8d](https://github.com/pixelastic/solkan/commit/d478e8d))
+- **commands:** Add time command prefix support
+  ([10450a0](https://github.com/pixelastic/solkan/commit/10450a0))
+- **xargs:** Add xargs command extraction support
+  ([dd3df92](https://github.com/pixelastic/solkan/commit/dd3df92))
