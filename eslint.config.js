@@ -5,7 +5,7 @@ export default [
   {
     files: ['**/*.{js,jsx,ts,tsx,vue}'],
     rules: {
-      'import/no-unresolved': [
+      'import-x/no-unresolved': [
         'error',
         {
           ignore: [
