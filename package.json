@@ -32,8 +32,8 @@
     "aberlaas": "2.42.0"
   },
   "dependencies": {
-    "firost": "5.11.0",
-    "golgoth": "4.0.0",
+    "firost": "5.11.2",
+    "golgoth": "4.1.1",
     "minimatch": "11.0.5",
     "minimist": "1.2.8",
     "unbash": "6.0.4"
